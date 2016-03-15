@@ -20,10 +20,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- Tells the browser what the title of this page should be. -->
   <title>Resume</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet">
-
+  
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
   Document Object Model (DOM). The DOM is a tree that contains information
@@ -39,6 +40,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   -->
   <script src="js/jQuery.js"></script>
 
+  
+
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
 
@@ -47,11 +50,13 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Google Map to your resume!
   -->
  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> 
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
-  <div id="main">
+
+  <div id="main" class="container">
    
     <!--
     Everything from here to the <script> tag below is the skeleton of your
@@ -59,13 +64,29 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
     -->
-    <div id="header" class="center-content clear-fix">
-      <ul id="topContacts" class="flex-box"></ul>
-    </div>
-    <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
+    <header id="header" class="center-content clear-fix">
+        <nav class="nav navbar-nav">
+          <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul id="topContacts" class="nav navbar-nav flex-box"></ul>
+              
+          </div>
+            
+        </nav>        
+    </header> 
+    <div class="row">
+      <div class="col-md-12"id="workExperience" class="gray">
       <h2>Work Experience</h2>
     </div>
+    </div>
+    
     <div id="projects">
       <h2>Projects</h2>
     </div>
@@ -76,7 +97,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <h2>Where I've Lived and Worked</h2>
     </div>
     <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
+      <h2 class="center-text">Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
       </ul>
     </div>
@@ -87,6 +108,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   writing. In resumeBuilder.js, you'll be writing code that builds the resume
   dynamically when this website, index.html, is opened.
   -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
   <script src="js/resumeBuilder.js"></script>
 
 
@@ -135,5 +158,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       document.getElementById('mapDiv').style.display = 'none';
     }
   </script>
+  
 </body>
 </html>
